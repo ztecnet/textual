@@ -4,17 +4,7 @@
 
 #import "TextualApplication.h"
 
-@interface TVCThinSplitView (Private)
-- (void)updatePosition;
-@end
-
 @implementation TVCThinSplitView
-
-@synthesize hidden;
-@synthesize position;
-@synthesize inverted;
-@synthesize fixedViewIndex;
-@synthesize altDividerThickness;
 
 - (void)setUp
 {
@@ -49,10 +39,10 @@
 - (void)setFixedViewIndex:(NSInteger)value
 {
 	if (NSDissimilarObjects(self.fixedViewIndex, value)) {
-		fixedViewIndex = value;
+		_fixedViewIndex = value;
 		
 		if (self.inverted) {
-			fixedViewIndex = ((self.fixedViewIndex) ? 0 : 1);
+			_fixedViewIndex = ((self.fixedViewIndex) ? 0 : 1);
 		}
 	}
 }
@@ -61,7 +51,7 @@
 {
 	if (self.position == value) return;
 	
-	position = value;
+	_position = value;
 	
 	[self adjustSubviews];
 }
@@ -70,16 +60,16 @@
 {
 	if (self.altDividerThickness == value) return;
 
-	altDividerThickness = value;
+	_altDividerThickness = value;
 
 	[self adjustSubviews];
 }
 
 - (void)setInverted:(BOOL)value
 {
-	if (inverted == value) return;
+	if (_inverted == value) return;
 	
-	inverted = value;
+	_inverted = value;
 	
 	NSView *a = [[self subviews] safeObjectAtIndex:0];
 	NSView *b = [[self subviews] safeObjectAtIndex:1];
@@ -90,7 +80,7 @@
 	[self addSubview:b];
 	[self addSubview:a];
 	
-	fixedViewIndex = ((self.fixedViewIndex) ? 0 : 1);
+	_fixedViewIndex = ((self.fixedViewIndex) ? 0 : 1);
 	
 	[self adjustSubviews];
 }
@@ -99,7 +89,7 @@
 {
 	[super setVertical:value];
 	
-	altDividerThickness = ((value) ? 1 : 5);
+	_altDividerThickness = ((value) ? 1 : 5);
 	
 	[self adjustSubviews];
 }
@@ -108,7 +98,7 @@
 {
 	if (self.hidden == value) return;
 	
-	hidden = value;
+	_hidden = value;
 	
 	[self adjustSubviews];
 }
@@ -117,10 +107,11 @@
 {
 	if (self.hidden) return;
 
-	NSColor *dividerColor;
+	NSColor *dividerColor = [NSColor colorWithCalibratedWhite:0.65 alpha:1];
 
-	dividerColor = [NSColor colorWithCalibratedWhite:0.65 alpha:1];
-	dividerColor = TXInvertSidebarColor(dividerColor);
+	if ([TPCPreferences invertSidebarColors]) {
+		dividerColor = [dividerColor invertColor];
+	}
 
 	[dividerColor set];
 	
@@ -168,11 +159,11 @@
 		return;
 	}
     
-    if ([self isSubviewCollapsed:[subviews_ objectAtIndex:self.fixedViewIndex]]) {
-        [super adjustSubviews];
-        
-        return;
-    }
+    //if ([self isSubviewCollapsed:subviews_[self.fixedViewIndex]]) {
+    //    [super adjustSubviews];
+    //
+    //   return;
+    //}
 	
 	NSSize size = self.frame.size;
 	

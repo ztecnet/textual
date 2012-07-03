@@ -386,7 +386,7 @@ static NSMutableDictionary *commandIndex = nil;
 
 + (BOOL)invertSidebarColors
 {
-	return NO;
+	return YES;
 }
 
 + (BOOL)trackConversations
