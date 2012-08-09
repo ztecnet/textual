@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>ZTN 2.0.1</string>
+	<string>ZTN 2.0.2</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -33,7 +33,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2.1 ZTN 2.0.1</string>
+	<string>2.1 ZTN 2.0.2</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.social-networking</string>
 	<key>LSMinimumSystemVersion</key>

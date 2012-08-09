@@ -104,5 +104,5 @@
 #define IRCCommandIndexSme					@"SME"
 #define IRCCommandIndexSmsg					@"SMSG"
 
-#define TXMaximumIRCBodyLength				520
+#define TXMaximumIRCBodyLength				512
 #define TXMaximumNodesPerModeCommand		4

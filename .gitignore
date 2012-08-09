@@ -10,7 +10,7 @@
 Rakefile
 build/*
 */build/*
-Signing/
+Signing Tools/
 build.sh
 appcast.xml
 changelog.txt

@@ -32,7 +32,7 @@
 
 "DCCRequestErrorMessage" = "The Textual IRC Client has received a DCC request that could not be processed.";
 
-"DefaultDisconnectQuitMessage" = "Textual v2.1 (ZTN Fork v2.0.1) http://www.ztecnet.net/textual";
+"DefaultDisconnectQuitMessage" = "Textual v2.1 (ZTN Fork v2.0.2) http://www.ztecnet.net/textual";
 "DefaultNewConnectionName" = "Untitled Connection";
 
 "DeleteButton" = "Delete";
@@ -51,7 +51,7 @@
 "IRCAwayCommandDefaultReason" = "Be back later.";
 "IRCCTCPRequestIgnored" = "\002-CTCP-\002 %1$@ from %2$@ was ignored.";
 "IRCCTCPSupportedReplies" = "VERSION CLIENTINFO USERINFO PING TIME";
-"IRCCTCPVersionInfo" = "Textual 2.1 (ZTN Fork v2.0.1 http://www.ztecnet.net/textual [Git Reference: %3$@]";
+"IRCCTCPVersionInfo" = "Textual 2.1 (ZTN Fork v2.0.2 http://www.ztecnet.net/textual) [Git Reference: %3$@]";
 "IRCCTCPVersionTitle" = "\002Current Version:\002 %@";
 "IRCCapCurrentlyEnabledNone" = "There are no capabilities in use.";
 "IRCCapCurrentlyEnbaled" = "The following capabilities are currently enabled: %@";
